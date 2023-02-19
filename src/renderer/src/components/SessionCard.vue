@@ -134,15 +134,17 @@ async function mainLoop() {
             const img = await loadCaptcha()
             captcha.value = img
             code.value = ''
+            log(`Wait for captcha input`)
             while (!code.value) {
-              log(`Wait for captcha input`)
               await wait(1000)
             }
+            log(`Started!!!`)
             const wanted = props.target
               .map((t) =>
                 list.find((i) => i.info.courseName === t.courseName && i.info.classNo === t.classNo)
               )
               .filter((t) => t)
+            if (!wanted.length) throw new Error('Damn it, no courses to elect!')
             for (;;) {
               for (const course of wanted) {
                 const { electedNum, limitNum } = await refreshLimit(
