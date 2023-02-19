@@ -4,7 +4,8 @@ export const localConfig = useLocalStorage(
   'localConfig',
   {
     user: '',
-    pass: ''
+    pass: '',
+    secondary: false
   },
   { deep: true }
 )

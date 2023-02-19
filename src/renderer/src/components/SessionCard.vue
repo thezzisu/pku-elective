@@ -51,7 +51,8 @@ async function login() {
     },
     body: JSON.stringify({
       user: localConfig.value.user,
-      pass: localConfig.value.pass
+      pass: localConfig.value.pass,
+      secondary: localConfig.value.secondary
     })
   })
   if (!resp.ok) throw new Error('login failed')
