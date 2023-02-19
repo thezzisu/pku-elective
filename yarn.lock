@@ -4800,16 +4800,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pku-elective-lib@npm:^0.1.6":
-  version: 0.1.6
-  resolution: "pku-elective-lib@npm:0.1.6"
+"pku-elective-lib@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "pku-elective-lib@npm:0.1.7"
   dependencies:
     "@fastify/type-provider-typebox": ^2.4.0
     "@sinclair/typebox": ^0.25.23
     fastify: ^4.13.0
     fs-extra: ^11.1.0
     puppeteer-core: ^19.7.1
-  checksum: 247fc75e082c5a4c195fab42c1d307be4848aec6903c2706ecb636b20a5a240dfeda7f674282134473ae4efa88d4d5e69c631fd081e67aca0a5b8a75d8c9c117
+  checksum: a64b1b63e7440967d203851dbcd7f17335ea4af52065573b52746caf662f6a30347997ce447d1994838ddfd879a6a549c57f06cd3424201cca53491d08eec084
   languageName: node
   linkType: hard
 
@@ -4836,7 +4836,7 @@ __metadata:
     eslint: ^8.31.0
     eslint-plugin-vue: ^9.8.0
     less: ^4.1.3
-    pku-elective-lib: ^0.1.6
+    pku-elective-lib: ^0.1.7
     prettier: ^2.8.2
     roboto-fontface: ^0.10.0
     sass: ^1.58.3
