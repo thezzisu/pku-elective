@@ -15,7 +15,7 @@ jobs:
         node-version-file: '.nvmrc'
     - run: corepack yarn
     - run: corepack yarn build:win
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: pku-elective-win
         path: dist/*.exe
@@ -30,7 +30,7 @@ jobs:
         node-version-file: '.nvmrc'
     - run: corepack yarn
     - run: corepack yarn build:mac
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: pku-elective-mac
         path: dist/*.dmg
@@ -45,7 +45,7 @@ jobs:
         node-version-file: '.nvmrc'
     - run: corepack yarn
     - run: corepack yarn build:linux
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: pku-elective-linux
         path: dist/*.AppImage
