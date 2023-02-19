@@ -7,7 +7,7 @@
         <img :src="captcha" />
         <VTextField v-model.lazy="code" label="Captcha" />
       </div>
-      <div ref="logNode" class="max-h-128 overflow-scroll">
+      <div ref="logNode" class="h-32 overflow-scroll">
         <pre class="whitespace-pre" v-text="logText"></pre>
       </div>
     </VCardText>
@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { localConfig } from '@renderer/config'
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const props = defineProps<{
   id: string
@@ -38,7 +38,9 @@ const logNode = ref<HTMLElement>()
 
 function log(msg: unknown) {
   logText.value += `[${new Date().toLocaleTimeString()}] ${msg}\n`
-  logNode.value?.scrollTo(0, logNode.value.scrollHeight)
+  nextTick(() => {
+    logNode.value?.scrollTo(0, logNode.value.scrollHeight)
+  })
 }
 
 async function login() {
