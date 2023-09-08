@@ -9,9 +9,13 @@
 
 </div>
 
+## Screenshots
+
+<img width="1134" alt="image" src="https://github.com/thezzisu/pku-elective/assets/21094314/9146427c-49ef-4d9b-8615-19530c2b1515">
+
 ## Usage
 
-See [docs](https://blog.zisu.dev/PKU-Elective-c353809449144adb8c2db85c535783f8) for more information.
+See [wiki](https://github.com/thezzisu/pku-elective/wiki) for more information.
 
 ## Contributing
 
