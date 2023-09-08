@@ -2,50 +2,56 @@ name: Build
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-windows:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version-file: '.nvmrc'
-    - run: corepack yarn
-    - run: corepack yarn build:win
-    - uses: actions/upload-artifact@v3
-      with:
-        name: pku-elective-win
-        path: dist/*.exe
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - run: corepack yarn
+      - run: corepack yarn build:win
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: pku-elective-win
+          path: dist/*.exe
 
   build-mac:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version-file: '.nvmrc'
-    - run: corepack yarn
-    - run: corepack yarn build:mac
-    - uses: actions/upload-artifact@v3
-      with:
-        name: pku-elective-mac
-        path: dist/*.dmg
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - run: corepack yarn
+      - run: corepack yarn build:mac
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: pku-elective-mac
+          path: dist/*.dmg
 
   build-linux:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version-file: '.nvmrc'
-    - run: corepack yarn
-    - run: corepack yarn build:linux
-    - uses: actions/upload-artifact@v3
-      with:
-        name: pku-elective-linux
-        path: dist/*.AppImage
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - run: corepack yarn
+      - run: corepack yarn build:linux
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: pku-elective-linux
+          path: dist/*.AppImage
