@@ -43,7 +43,7 @@ if (!app.requestSingleInstanceLock()) {
       port: 6233,
       host: '127.0.0.1'
     })
-    electronApp.setAppUserModelId('com.electron')
+    electronApp.setAppUserModelId('dev.zisu.pku-elective')
 
     app.on('browser-window-created', (_, window) => {
       optimizer.watchWindowShortcuts(window)

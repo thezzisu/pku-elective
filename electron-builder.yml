@@ -1,4 +1,4 @@
-appId: com.thezzisu.pku-elective
+appId: dev.zisu.pku-elective
 productName: pku-elective
 directories:
   buildResources: build
@@ -36,5 +36,4 @@ appImage:
   artifactName: ${name}-${version}.${ext}
 npmRebuild: false
 publish:
-  provider: generic
-  url: https://example.com/auto-updates
+  provider: github
