@@ -7,6 +7,8 @@ on:
 jobs:
   build-windows:
     runs-on: windows-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v3
@@ -14,7 +16,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: corepack yarn
-      - run: corepack yarn build:win -p always
+      - run: corepack yarn build:win
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v3
@@ -31,7 +33,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: corepack yarn
-      - run: corepack yarn build:mac -p always
+      - run: corepack yarn build:mac
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v3
@@ -48,7 +50,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: corepack yarn
-      - run: corepack yarn build:linux -p always
+      - run: corepack yarn build:linux
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v3
