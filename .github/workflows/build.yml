@@ -16,7 +16,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: corepack yarn
-      - run: corepack yarn build:win
+      - run: corepack yarn build:win -p always
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v3
@@ -33,7 +33,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: corepack yarn
-      - run: corepack yarn build:mac
+      - run: corepack yarn build:mac -p always
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v3
@@ -50,7 +50,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: corepack yarn
-      - run: corepack yarn build:linux
+      - run: corepack yarn build:linux -p always
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v3
